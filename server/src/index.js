@@ -24,7 +24,6 @@ app.use(helmet());
 app.use(cors({ origin: process.env.CLIENT_URL?.split(',').map((item) => item.trim()) || 'http://localhost:5173' }));
 app.use(express.json({ limit: '32kb' }));
 app.use(morgan('tiny'));
-app.use('/api', rateLimit({ windowMs: 15 * 60 * 1000, limit: 180, standardHeaders: 'draft-7', legacyHeaders: false }));
 app.get('/api/health', (req, res) => {
   const databaseConnected = mongoose.connection.readyState === 1;
   res.status(databaseConnected ? 200 : 503).json({
@@ -32,6 +31,7 @@ app.get('/api/health', (req, res) => {
     database: databaseConnected ? 'connected' : 'disconnected'
   });
 });
+app.use('/api', rateLimit({ windowMs: 15 * 60 * 1000, limit: 180, standardHeaders: 'draft-7', legacyHeaders: false }));
 app.use('/api/auth', authRoutes);
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/support', supportRoutes);
