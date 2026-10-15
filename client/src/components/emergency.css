@@ -1,0 +1,26 @@
+.emergency-inbox{margin:0 0 20px;border-color:#f4c9c5;box-shadow:0 6px 22px rgba(126,31,28,.06)}
+.emergency-inbox-heading .eyebrow{display:flex;align-items:center;gap:6px;color:#bd3f3c}
+.emergency-inbox-heading h2 span{color:#bd3f3c}
+.emergency-inbox-tools{display:flex;align-items:center;gap:9px}
+.emergency-inbox-tools .button{display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:9px 11px}
+.notification-denied{max-width:185px;color:#805b2f;font-size:11px;line-height:1.4}
+.emergency-alert-list{display:grid}
+.emergency-alert-row{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:12px;align-items:start;padding:16px 20px;border-bottom:1px solid #f5e4e2;position:relative}
+.emergency-alert-row:last-child{border-bottom:0}
+.emergency-alert-row.alert-status-new{background:#fff8f7}
+.emergency-alert-symbol{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#ffe8e5;color:#bd3f3c}
+.emergency-alert-title{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.emergency-alert-title strong{font-size:12px;color:#263449}
+.emergency-priority-badge{padding:4px 8px;border-radius:999px;background:#fff1d6;color:#825206;font-size:11px;font-weight:700}
+.emergency-priority-badge.emergency{background:#ffe3e0;color:#a32320}
+.emergency-status-badge{padding:4px 8px;border-radius:999px;font-size:11px;text-transform:capitalize;background:#fee9e6;color:#a93632}
+.emergency-status-badge.acknowledged{background:#fff2d7;color:#91600c}
+.emergency-status-badge.resolved{background:#e4f6ed;color:#21815b}
+.emergency-alert-patient>a{display:inline-flex;align-items:center;gap:5px;margin-top:6px;color:#2269cb;font-size:11px}
+.emergency-alert-patient>p{margin:7px 0;color:#46566a;font-size:11px;line-height:1.55;overflow-wrap:anywhere}
+.emergency-alert-patient>small{display:flex;align-items:center;gap:4px;flex-wrap:wrap;color:#738196;font-size:11px}
+.emergency-ack-button{align-self:center;display:flex;align-items:center;gap:5px;padding:8px 10px;border:1px solid #ebc5c1;border-radius:5px;background:#fff;color:#a33b36;font-size:11px;font-weight:700;cursor:pointer}
+.emergency-ack-button:disabled{opacity:.55;cursor:wait}
+.emergency-alert-code{grid-column:2/-1;color:#a3acb8;font-size:11px;letter-spacing:.6px}
+.emergency-inbox-note{margin:0;padding:10px 16px;border-top:1px solid #f3e6e5;color:#8d7775;font-size:11px;line-height:1.5}
+@media(max-width:650px){.emergency-inbox-heading{align-items:flex-start;gap:10px;flex-direction:column}.emergency-inbox-tools{width:100%;justify-content:space-between;flex-wrap:wrap}.emergency-alert-row{grid-template-columns:30px minmax(0,1fr);padding:13px;gap:8px}.emergency-alert-symbol{width:28px;height:28px}.emergency-alert-patient{min-width:0}.emergency-ack-button{grid-column:2;justify-self:start}.emergency-alert-code{grid-column:2}.emergency-inbox-tools .button{font-size:11px}}

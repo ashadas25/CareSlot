@@ -1,0 +1,14 @@
+import { Router } from 'express';
+import rateLimit from 'express-rate-limit';
+import { getAdminSetupStatus, login, me, provisionAdmin, register } from '../controllers/authController.js';
+import { requireAuth } from '../middleware/auth.js';
+import { asyncHandler } from '../middleware/asyncHandler.js';
+const router = Router();
+const adminSetupLimit = rateLimit({ windowMs: 15 * 60 * 1000, limit: 8, standardHeaders: 'draft-7', legacyHeaders: false, message: { message: 'Too many administrator setup attempts. Wait 15 minutes and try again.' } });
+const loginAttemptLimit = rateLimit({ windowMs: 15 * 60 * 1000, limit: 10, standardHeaders: 'draft-7', legacyHeaders: false, message: { message: 'Too many sign-in attempts. Wait 15 minutes and try again.' } });
+router.post('/register', asyncHandler(register));
+router.get('/admin-setup-status', asyncHandler(getAdminSetupStatus));
+router.post('/provision-admin', adminSetupLimit, asyncHandler(provisionAdmin));
+router.post('/login', loginAttemptLimit, asyncHandler(login));
+router.get('/me', requireAuth, asyncHandler(me));
+export default router;

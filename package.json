@@ -1,0 +1,14 @@
+{
+  "name": "careslot-clinic-platform",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k -n Appointments,Directory,Web \"npm run dev:server\" \"npm run dev:clinic\" \"npm run dev:client\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:clinic": "npm --prefix server/clinic-service run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}

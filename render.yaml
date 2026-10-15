@@ -1,0 +1,48 @@
+services:
+  - type: web
+    name: careslot-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 8h
+      - key: CLIENT_URL
+        sync: false
+      - key: ADMIN_SETUP_KEY
+        sync: false
+      - key: SERVICE_API_KEY
+        sync: false
+      - key: CLINIC_SERVICE_URL
+        sync: false
+
+  - type: web
+    name: careslot-directory
+    runtime: node
+    plan: free
+    rootDir: server/clinic-service
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB_NAME
+        value: careslot_directory
+      - key: CLIENT_URL
+        sync: false
+      - key: CLINIC_ADMIN_KEY
+        sync: false
+      - key: SERVICE_API_KEY
+        sync: false

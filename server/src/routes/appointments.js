@@ -1,0 +1,14 @@
+import { Router } from 'express';
+import { createAppointment, listHospitalAppointments, listMyAppointments, listMyNotifications, markAppointmentRead, postAppointmentMessage, updateAppointmentStatus } from '../controllers/appointmentController.js';
+import { requireAuth, requirePatient, requireStaff } from '../middleware/auth.js';
+import { asyncHandler } from '../middleware/asyncHandler.js';
+const router = Router();
+router.use(requireAuth);
+router.post('/', requirePatient, asyncHandler(createAppointment));
+router.get('/notifications', asyncHandler(listMyNotifications));
+router.get('/mine', asyncHandler(listMyAppointments));
+router.get('/hospital', requireStaff, asyncHandler(listHospitalAppointments));
+router.patch('/:id/status', requireStaff, asyncHandler(updateAppointmentStatus));
+router.post('/:id/messages', asyncHandler(postAppointmentMessage));
+router.post('/:id/read', asyncHandler(markAppointmentRead));
+export default router;

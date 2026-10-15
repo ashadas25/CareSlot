@@ -1,0 +1,317 @@
+{
+  "info": {
+    "_postman_id": "b6713147-c1f0-4ce8-9da4-15cb1113f712",
+    "name": "CareSlot API",
+    "description": "CareSlot patient and clinic directory APIs. Set API base URLs, sign in to save a JWT token, and provide seeded hospital IDs as needed. Use test credentials only.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Appointment API health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{apiBase}}/health"
+          }
+        },
+        {
+          "name": "Directory API health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{clinicBase}}/health"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clinic directory",
+      "item": [
+        {
+          "name": "List hospitals",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{clinicBase}}/hospitals?region=Coimbatore"
+          }
+        },
+        {
+          "name": "List available doctors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{clinicBase}}/doctors?hospitalId={{hospitalId}}&specialty=Cardiology&day=Monday"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Patient and appointments",
+      "item": [
+        {
+          "name": "Register patient",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{apiBase}}/auth/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sample Patient\",\n  \"email\": \"patient@example.com\",\n  \"password\": \"ChangeThisPassword123\",\n  \"phone\": \"+91 90000 00000\",\n  \"role\": \"patient\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Sign in",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{apiBase}}/auth/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"patient@example.com\",\n  \"password\": \"ChangeThisPassword123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "  const result = pm.response.json();",
+                  "  if (result.token) pm.collectionVariables.set('token', result.token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Current account",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "url": "{{apiBase}}/auth/me"
+          }
+        },
+        {
+          "name": "Create appointment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "url": "{{apiBase}}/appointments",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"hospitalId\": \"{{hospitalId}}\",\n  \"doctorId\": \"any\",\n  \"specialty\": \"Cardiology\",\n  \"appointmentAt\": \"{{appointmentAt}}\",\n  \"patientName\": \"Sample Patient\",\n  \"patientEmail\": \"patient@example.com\",\n  \"patientPhone\": \"+91 90000 00000\",\n  \"reason\": \"Routine consultation\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "My appointments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "url": "{{apiBase}}/appointments/mine"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Emergency and support",
+      "item": [
+        {
+          "name": "Submit emergency alert",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{apiBase}}/emergency-alerts",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientName\": \"Sample Patient\",\n  \"patientPhone\": \"+91 90000 00000\",\n  \"hospitalId\": \"{{hospitalId}}\",\n  \"situation\": \"Sample urgent situation for API testing\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Submit support request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{apiBase}}/support",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sample User\",\n  \"email\": \"user@example.com\",\n  \"subject\": \"API test\",\n  \"message\": \"Sample support question\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Administrator setup",
+      "item": [
+        {
+          "name": "Provision first admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-setup-key",
+                "value": "{{adminSetupKey}}",
+                "type": "text"
+              }
+            ],
+            "url": "{{apiBase}}/auth/provision-admin",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Demo Administrator\",\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"ReplaceWithTestPassword123\",\r\n  \"phone\": \"+91 90000 00000\",\r\n  \"hospitalId\": \"{{hospitalId}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Provision hospital staff",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-setup-key",
+                "value": "{{adminSetupKey}}",
+                "type": "text"
+              }
+            ],
+            "url": "{{apiBase}}/auth/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Demo Staff\",\r\n  \"email\": \"staff@example.com\",\r\n  \"password\": \"ReplaceWithTestPassword123\",\r\n  \"phone\": \"+91 90000 00000\",\r\n  \"role\": \"staff\",\r\n  \"hospitalId\": \"{{hospitalId}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "apiBase",
+      "value": "http://localhost:5000/api"
+    },
+    {
+      "key": "clinicBase",
+      "value": "http://localhost:5001/api"
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "hospitalId",
+      "value": ""
+    },
+    {
+      "key": "appointmentAt",
+      "value": "2027-01-10T10:30:00Z"
+    },
+    {
+      "key": "adminSetupKey",
+      "value": ""
+    }
+  ]
+}

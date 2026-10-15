@@ -1,0 +1,97 @@
+/* Portal dashboards: dark navy surfaces, blue accents, readable high-contrast text. */
+.admin-app,.admin-main,.staff-dashboard{background:#070d18;color:#e8f0fb}
+.admin-topbar{background:rgba(10,20,35,.96);border-color:#203149}
+.admin-topbar>div:first-child strong,.admin-welcome h1,.admin-card-heading h2,.admin-editor-title h3,.admin-branch-card h3,.admin-metric>strong,.admin-doctor-cell strong,.admin-appointment-cell strong,.admin-app .queue-heading h2,.staff-dashboard h1,.staff-dashboard h2,.staff-dashboard .staff-stat strong,.staff-dashboard .appointment-patient strong,.staff-dashboard .patient-appointment-top h2{color:#edf4ff}
+.admin-topbar>div:first-child span,.admin-live-indicator,.admin-welcome p,.admin-bar-row>span,.admin-status-summary span,.admin-branch-card>p,.admin-footer,.admin-table-note,.admin-metric>small,.admin-metric>em,.admin-table-sub,.admin-doctor-cell small,.admin-appointment-cell small,.staff-dashboard .staff-back-link,.staff-dashboard .staff-heading p,.staff-dashboard .staff-privacy-note,.staff-dashboard .staff-stat small,.staff-dashboard .staff-stat label,.staff-dashboard .appointment-patient span,.staff-dashboard .appointment-date,.staff-dashboard .patient-appointment-details,.staff-dashboard .patient-appointment-note{color:#b1c0d3}
+.admin-welcome small,.admin-card-heading>div>small,.admin-editor-title small{color:#83b5ff}
+.admin-card,.admin-metric,.admin-branch-card,.admin-app .queue-card,.staff-dashboard .staff-stat,.staff-dashboard .queue-card,.staff-dashboard .patient-appointment-card{border-color:#263a53;background:#0e1a2b;box-shadow:0 8px 24px #0003}
+.admin-refresh,.admin-home-link,.admin-search,.admin-list-tools>select,.admin-filter-pair select,.admin-form-grid input,.admin-form-grid select,.admin-branch-actions button,.admin-row-actions button,.admin-action-link,.admin-app .support-status-label select,.staff-dashboard .filter-label select{border-color:#314760;background:#13243a;color:#e0ebf8}
+.admin-refresh:hover,.admin-home-link:hover,.admin-branch-actions button:hover,.admin-row-actions button:hover,.admin-action-link:hover{border-color:#4c8fea;background:#193253;color:#fff}
+.admin-search input,.admin-form-grid input,.admin-app .appointment-chat textarea,.staff-dashboard .appointment-chat textarea{color:#eff5ff}
+.admin-search input::placeholder,.admin-form-grid input::placeholder,.admin-app .appointment-chat textarea::placeholder,.staff-dashboard .appointment-chat textarea::placeholder{color:#91a5bf}
+.admin-list-tools,.admin-list-tools>span,.admin-form-grid label,.admin-form-grid label span,.admin-service-checks>strong,.admin-branch-specialties span{color:#bdcce0}
+.admin-search,.admin-editor,.admin-health-item,.admin-branch-specialties span{background:#12233a}
+.admin-editor{border-color:#345477}
+.admin-metric-icon,.admin-branch-card-top>span,.admin-activity-item>span{background:#193556;color:#9bc5ff}
+.admin-metric.cyan .admin-metric-icon{background:#123442;color:#70d8ed}
+.admin-metric.violet .admin-metric-icon{background:#29264a;color:#b5a6ff}
+.admin-metric.amber .admin-metric-icon{background:#3a301e;color:#f4c66d}
+.admin-bar-row>div{background:#1c2e46}
+.admin-table-scroll{border-color:#263a53}
+.admin-table th{background:#152741;color:#b9c9de}
+.admin-table td{border-color:#263a53;color:#d4e0ef}
+.admin-health-item{border-color:#2c4058}
+.admin-health-item strong,.admin-activity-item>div strong{color:#e1ebf8}
+.admin-health-item small,.admin-activity-item>div small{color:#afc0d5}
+.admin-status{background:#1a2b40;color:#c1d0e2}
+.admin-status-requested,.staff-dashboard .status-requested{background:#392e1c;color:#f4ce7b}
+.admin-status-confirmed,.admin-status-available,.admin-status-active,.staff-dashboard .status-confirmed{background:#162f50;color:#9bc4ff}
+.admin-status-completed,.staff-dashboard .status-completed{background:#12352f;color:#83e0b7}
+.admin-status-cancelled,.admin-status-inactive,.admin-status-paused,.admin-status-unavailable,.staff-dashboard .status-cancelled{background:#3a2529;color:#ffaaa5}
+.admin-status-summary,.admin-activity-item,.directory-heading,.admin-branch-actions,.admin-app .queue-heading,.admin-app .support-request,.staff-dashboard .queue-heading,.staff-dashboard .appointment-row,.staff-dashboard .patient-appointment-note{border-color:#263a53}
+.admin-app .queue-heading h2 span{color:#aec0d7}
+.admin-app .support-request-meta strong{color:#e3edf9}
+.admin-app .support-request-meta a,.admin-text-action,.admin-action-link{color:#8dbaff}
+.admin-app .support-request-meta time,.admin-app .support-request-main>p,.admin-app .support-status-label{color:#b1c0d3}
+.admin-flash.error{border-color:#704044;background:#321f26;color:#ffaaa5}
+.admin-flash.success{border-color:#28634e;background:#142c27;color:#8ee1bd}
+.staff-dashboard .queue-empty,.staff-dashboard .queue-empty p{color:#b1c0d3}
+.staff-dashboard .patient-initial{background:#17345a;color:#a8ccff}
+.staff-dashboard .appointment-patient small,.staff-dashboard .patient-appointment-details svg,.staff-dashboard .patient-appointment-note svg{color:#8ebcff}
+.staff-dashboard .patient-notification{border-color:#345782;background:#142942;color:#b7d4ff}
+.staff-dashboard .patient-notification strong{color:#edf4ff}
+.staff-dashboard .patient-notification small{color:#b1c4dc}
+.staff-dashboard .patient-notification button,.staff-dashboard .patient-history-toggle{color:#8ebcff}
+.staff-dashboard .patient-history-toggle>span{background:#19365a;color:#acd0ff}
+.admin-app .appointment-conversation,.staff-dashboard .appointment-conversation{border-color:#2c4058;background:#12233a}
+.admin-app .appointment-thread-heading,.staff-dashboard .appointment-thread-heading{color:#dce8f7}
+.admin-app .appointment-history li strong,.staff-dashboard .appointment-history li strong{color:#e1ebf9}
+.admin-app .appointment-history li span,.admin-app .appointment-history li small,.admin-app .appointment-thread-heading>span,.admin-app .appointment-chat-note,.staff-dashboard .appointment-history li span,.staff-dashboard .appointment-history li small,.staff-dashboard .appointment-thread-heading>span,.staff-dashboard .appointment-chat-note{color:#afc0d5}
+.admin-app .appointment-message-list,.staff-dashboard .appointment-message-list{border-color:#314760;background:#0b1728}
+.admin-app .appointment-message,.staff-dashboard .appointment-message{background:#1a2b40}
+.admin-app .appointment-message.from-patient,.staff-dashboard .appointment-message.from-patient{background:#16345a}
+.admin-app .appointment-message small,.staff-dashboard .appointment-message small{color:#b1c4dc}
+.admin-app .appointment-message p,.staff-dashboard .appointment-message p{color:#e1ebf9}
+.admin-app .appointment-chat textarea,.staff-dashboard .appointment-chat textarea{border-color:#314760;background:#0b1728}
+.admin-app .appointment-chat-empty,.staff-dashboard .appointment-chat-empty{color:#b1c4dc}
+.admin-app .action-message,.staff-dashboard .action-message{border-color:#345782;background:#142942;color:#b7d4ff}
+.admin-app .emergency-inbox{border-color:#65383b;background:#201b27;box-shadow:0 8px 24px #0004}
+.admin-app .emergency-inbox-heading .eyebrow,.admin-app .emergency-inbox-heading h2 span{color:#ff9692}
+.admin-app .emergency-alert-row{border-color:#483238}
+.admin-app .emergency-alert-row.alert-status-new{background:#2b2028}
+.admin-app .emergency-alert-symbol{background:#492a30;color:#ff9994}
+.admin-app .emergency-alert-title strong{color:#f0e6eb}
+.admin-app .emergency-priority-badge{background:#49391f;color:#f4d183}
+.admin-app .emergency-priority-badge.emergency{background:#522a30;color:#ffaaa5}
+.admin-app .emergency-status-badge{background:#522a30;color:#ffaaa5}
+.admin-app .emergency-status-badge.acknowledged{background:#49391f;color:#f4d183}
+.admin-app .emergency-status-badge.resolved{background:#173b34;color:#8ee1bd}
+.admin-app .emergency-alert-patient>a{color:#91bdff}
+.admin-app .emergency-alert-patient>p{color:#e0d8df}
+.admin-app .emergency-alert-patient>small,.admin-app .emergency-alert-code,.admin-app .emergency-inbox-note{color:#b7aab5}
+.admin-app .emergency-ack-button{border-color:#744046;background:#38262d;color:#ffaaa5}
+.admin-app .emergency-inbox-note{border-color:#483238}
+/* Dark treatment for the standalone patient/admin sign-in screen. */
+.auth-entry-backdrop{background:radial-gradient(ellipse at 50% 0%,#132c4d 0%,#081323 58%,#050a12 100%);backdrop-filter:none}
+.auth-entry-backdrop .auth-dialog{border-color:#263e5b;background:#0d1a2d;box-shadow:0 28px 90px #0009}
+.auth-entry-backdrop .auth-content{color:#e7effb}
+.auth-entry-backdrop .auth-content h2{color:#f3f7ff}
+.auth-entry-backdrop .auth-content>p,.auth-entry-backdrop .auth-privacy{color:#a8b9cf}
+.auth-entry-backdrop .auth-brand{color:#f3f7ff}
+.auth-entry-backdrop .auth-brand .brand-mark{border-color:#3c6595;background:#152b48;color:#8bcaff}
+.auth-entry-backdrop .signin-choice-prompt{color:#dce8f8}
+.auth-entry-backdrop .signin-role-picker{border-color:#2b405a;background:#101f34}
+.auth-entry-backdrop .signin-role-picker button{color:#b2c3d8}
+.auth-entry-backdrop .signin-role-picker button.active{border-color:#3c70ad;background:#193457;color:#a8ccff;box-shadow:0 2px 10px #0004}
+.auth-entry-backdrop .auth-form label{color:#d7e3f2}
+.auth-entry-backdrop .auth-form .optional{color:#9eb1c9}
+.auth-entry-backdrop .input-wrap{border-color:#314861;background:#101f33;color:#9db5d1}
+.auth-entry-backdrop .input-wrap:focus-within{border-color:#5597f5;box-shadow:0 0 0 3px #347aff2b}
+.auth-entry-backdrop .input-wrap input,.auth-entry-backdrop .input-wrap select{color:#eff5ff}
+.auth-entry-backdrop .input-wrap input::placeholder{color:#8499b4}
+.auth-entry-backdrop .input-wrap .input-trailing{color:#a9bbd1}
+.auth-entry-backdrop .auth-switch{color:#afc0d5}
+.auth-entry-backdrop .auth-switch button{color:#8dbaff}
+.auth-entry-backdrop .auth-privacy{color:#99abc2}
+.auth-entry-backdrop .form-error{border-color:#754247;background:#321f26;color:#ffaaa5}
+.auth-entry-backdrop .admin-setup-success{border-color:#28634e;background:#142c27;color:#8ee1bd}
